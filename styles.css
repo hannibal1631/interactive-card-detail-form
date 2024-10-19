@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+:root {
+  /* Primary */
+  --Linear-gradient-active-input-border: hsl(249, 99%, 64%) to
+    hsl(278, 94%, 30%);
+  --Red-input-errors: hsl(0, 100%, 66%);
+
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Space Grotesk';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--White);
+  background-image: url(./images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+  background-size: 39%;
+  background-position: left;
+}
+.container {
+  display: flex;
+  width: 1100px;
+}
+/* card styles from here */
+.card-div {
+  display: flex;
+  flex-direction: column;
+  padding: 0 100px;
+  gap: 35px;
+}
+/* front card styles starts here */
+.card-front {
+  position: relative;
+  margin-left: -100px;
+  box-shadow: 0 10px 20px 20px hsla(0, 0%, 0%, 0.1);
+  border-radius: 10px;
+}
+.front-card-img {
+  height: 100%;
+  width: 100%;
+}
+.card-display {
+  position: absolute;
+  top: 10%;
+  right: 7%;
+  width: 87%;
+}
+.card-display > img {
+  margin-bottom: 55px;
+}
+.card-number-display {
+  color: var(--White);
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+.name-exp-date {
+  display: flex;
+  justify-content: space-between;
+}
+.name-exp-date > p {
+  color: var(--White);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+/* front card styles end here */
+
+/* back card styles starts here */
+.card-back {
+  position: relative;
+  margin-right: -100px;
+  box-shadow: 0 10px 20px 20px hsla(0, 0%, 0%, 0.1);
+  border-radius: 10px;
+}
+.back-card-img {
+  height: 100%;
+}
+.cvc-num-display {
+  position: absolute;
+  top: 45%;
+  right: 12%;
+  color: var(--White);
+  letter-spacing: 2px;
+}
+/* back card styles end here */
+
+/* --------form styles from here-------- */
+.form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--Very-dark-violet);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.name-input,
+.card-number-input {
+  margin-bottom: 25px;
+}
+.date-cvc-input {
+  margin-bottom: 35px;
+}
+
+#name,
+#card-num {
+  width: 100%;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid var(--Light-grayish-violet);
+  padding: 25px 20px;
+  font-size: 18px;
+  font-family: 'Space Grotesk';
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.date-cvc-input {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.date-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.date-input > input {
+  width: 75px;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid var(--Light-grayish-violet);
+  padding: 25px 20px;
+  font-size: 18px;
+  font-family: 'Space Grotesk';
+  cursor: pointer;
+}
+#cvc {
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid var(--Light-grayish-violet);
+  padding: 25px 20px;
+  font-size: 18px;
+  font-family: 'Space Grotesk';
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.confirm-btn {
+  width: 100%;
+  height: 50px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--Very-dark-violet);
+  color: var(--White);
+  font-size: 17px;
+  font-family: 'Space Grotesk';
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.confirm-btn:hover {
+  background: hsl(249, 99%, 64%);
+  text-decoration: underline;
+}
+
+input::placeholder {
+  color: var(--Light-grayish-violet);
+}
+
+.name-error-text,
+.card-error-text,
+.date-error-text,
+.cvc-error-text {
+  color: var(--Red-input-errors);
+  font-size: 14px;
+  font-weight: 700;
+  display: none;
+}
+
+/* complete div styles */
+form {
+  display: block;
+}
+
+.complete-state-div {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+.complete-state-div > img {
+  margin-bottom: 35px;
+}
+.complete-state-div > h2 {
+  margin-bottom: 15px;
+  font-size: 35px;
+  letter-spacing: 2px;
+  color: var(--Very-dark-violet);
+}
+.complete-state-div > p {
+  margin-bottom: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--Dark-grayish-violet);
+}
+.reset-btn {
+  width: 100%;
+  height: 50px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--Very-dark-violet);
+  color: var(--White);
+  font-size: 17px;
+  font-family: 'Space Grotesk';
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.reset-btn:hover {
+  background: hsl(249, 99%, 64%);
+  text-decoration: underline;
+}
+/* complete div styles end */
